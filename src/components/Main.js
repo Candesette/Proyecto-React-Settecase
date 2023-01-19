@@ -9,7 +9,7 @@ export function Main(){
     <main> 
       <Routes>
         <Route path="/" element={<ItemListContainer greeting={"Bienvenido a nuestro sitio"}/>}/>
-        <Route path="/category/:id" element={<ItemListContainer/>}/>        
+        <Route path="category/:category" element={<ItemListContainer/>}/>        
         <Route path="/item/:id" element={<ItemDetailContainer/>}/>
         <Route path="/contacto" element={<p>Contacto</p>}/>
         <Route path="/cart" element={<Cart/>}/>

@@ -2,35 +2,35 @@ import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 import { ItemList } from "./Itemlist"
 
-export function ItemListContainer(props){
-
-  const params = useParams()
-  console.log(params.category)
+export function ItemListContainer(){
 
   const [load, setLoad] = useState(false)
   const [products, setProducts] = useState([])
+  const {category} = useParams()
 
   useEffect(()=>{
-  
-    fetch("https://api.sampleapis.com/coffee/hot")
+    let url = "https://fakestoreapi.com/products"
+    if (category) {
+      url = url + "/category/" + category
+    }
+    fetch(url)
     .then((respuesta)=> {
       const products = respuesta.json() 
       return products
     })
     .then((products)=>{
-        console.log(products)
-        setProducts(products)
-        setLoad(true)
+      setProducts(products)
+      setLoad(true)
     })
     .catch((error)=>{
       console.log(error)
     })
 
-  },[])
+  },[category])
   
   return(
     <div className="itemListContainer">
-      {load ? "Loaded Products" : "Load..."}
+      {load ? null : "Load..."}
       <ItemList products={products} />
     </div>
   )

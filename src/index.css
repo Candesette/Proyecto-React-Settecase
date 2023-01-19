@@ -99,10 +99,35 @@ div.itemList{
   margin-bottom: 50px;
 }
 
+div.itemDetail{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 200px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 10px;
+  padding: 15px;
+  border-style: groove;
+}
+
+div.itemDetail img{
+  width: 70%;
+  height: 40%;
+  border-radius: 3%;
+
+}
+div.itemDetail p{
+  text-align: center;
+  font-size: small;
+}
+
 article.item{
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  width: 200px;
+  height: 300px;
   align-items: center;
   background-color: rgb(255, 255, 255);
   border-radius: 10px;
@@ -113,7 +138,5 @@ article.item{
 article.item img{
   width: 80%;
   height: 50%;
-  border-radius: 3%;
-
 }
 
